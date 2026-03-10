@@ -1,0 +1,21 @@
+# Секреты
+.env
+
+# Виртуальное окружение
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Временные файлы бота (excel)
+*.xlsx
+*.xls
