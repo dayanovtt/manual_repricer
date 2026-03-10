@@ -9,9 +9,7 @@ from openpyxl.workbook.workbook import Workbook
 from app.parsers import norm, parse_number, parse_discount_percent, ceil_int
 
 
-# =========================
 # Канонические имена колонок
-# =========================
 
 @dataclass(frozen=True)
 class CanonicalCols:
@@ -60,9 +58,7 @@ SYNONYMS: Dict[str, List[str]] = {
 }
 
 
-# =========================
 # Формула
-# =========================
 
 def compute_p_new(p_before: float, d_percent: float, p_current: float, p_target: float) -> Optional[int]:
     factor = 1.0 - (d_percent / 100.0)
@@ -81,9 +77,7 @@ def compute_p_new(p_before: float, d_percent: float, p_current: float, p_target:
     return ceil_int(p_new)
 
 
-# =========================
 # Поиск заголовков
-# =========================
 
 def build_header_map(ws: Worksheet, header_row: int) -> Dict[str, int]:
     m: Dict[str, int] = {}
@@ -163,9 +157,7 @@ def detect_required_columns(ws: Worksheet, header_row: int) -> Tuple[int, int, i
     return p_before_col, discount_col, p_current_col, p_target_col, price_min_col, p_new_col
 
 
-# =========================
 # Обработка файлов
-# =========================
 
 def process_xlsx_reprice(in_path: str, out_path: str, sheet_name: str = None) -> int:
     wb: Workbook = load_workbook(in_path)

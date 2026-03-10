@@ -7,7 +7,7 @@ class Mode(str, Enum):
 
 
 # Простейшее хранение состояния в памяти:
-# user_id -> {"mode": Mode}
+# user_id - {"mode": Mode}
 USER_STATE: Dict[int, Dict[str, Any]] = {}
 
 

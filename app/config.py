@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-# Корень проекта: app/config.py -> app/ -> корень
 ROOT = Path(__file__).parent.parent
 
 
